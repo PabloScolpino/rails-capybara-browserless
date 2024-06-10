@@ -50,3 +50,10 @@ Currently an example for Ferrum development
           # ./spec/system/home_spec.rb:8:in `block (3 levels) in <top (required)>'
           # ./spec/system/support/better_rails_system_tests.rb:31:in `block (2 levels) in <main>'
 ```
+
+# URLs
+
+* rails server [http://localhost:3000](http://localhost:3000)
+* browserless built-in documentation [http://localhost:3333/docs](http://localhost:3333/docs)
+* browserless debugger [http://localhost:3333/debugger?token=CHROMIUMTESTTOKEN](http://localhost:3333/debugger?token=CHROMIUMTESTTOKEN)
+* browserless documenation [https://docs.browserless.io/](https://docs.browserless.io/)
