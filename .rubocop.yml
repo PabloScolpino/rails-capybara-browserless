@@ -1,0 +1,29 @@
+require:
+  - rubocop-rails
+  - rubocop-rake
+  - rubocop-rspec
+  - rubocop-capybara
+
+AllCops:
+  NewCops: enable
+  ExtraDetails: false
+  Exclude:
+    - ".git/**/*"
+    - bin/**/*
+    - db/**/*
+    - config/**/*
+    - script/**/*
+    - tmp/**/*
+    - vendor/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Style/TrailingCommaInArguments:
+  Enabled: false
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
