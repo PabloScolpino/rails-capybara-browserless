@@ -26,8 +26,6 @@ remote_chrome =
   end
 
 remote_options = remote_chrome ? { url: REMOTE_CHROME_URL } : {}
-ap remote_options
-# remote_options = remote_chrome ? { url: 'http://chrome:3333/?token=CHROMIUMTESTTOKEN' } : {}
 
 require 'capybara/cuprite'
 
@@ -68,16 +66,11 @@ module CupriteHelpers
   end
 
   def debug(binding = nil)
-    $stdout.puts '🔎 Open Chrome inspector at http://localhost:3333'
+    $stdout.puts '🔎 Open Chrome inspector at http://localhost:3333/debugger?token=CHROMIUMTESTTOKEN'
     return binding.pry if binding
 
     page.driver.pause
   end
-
-  # def debug(*args)
-  #   $stdout.puts '🔎 Open Chrome inspector at http://localhost:333'
-  #   page.driver.debug(*args)
-  # end
 end
 
 RSpec.configure do |config|
