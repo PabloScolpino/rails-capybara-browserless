@@ -65,11 +65,13 @@ module CupriteHelpers
     page.driver.pause
   end
 
-  def debug(binding = nil)
+  def debug
     $stdout.puts '🔎 Open Chrome inspector at http://localhost:3333/debugger?token=CHROMIUMTESTTOKEN'
-    return binding.pry if binding
-
-    page.driver.pause
+    require 'pry'
+    # rubocop:disable Lint/Debugger
+    binding.pry
+    # rubocop:enable Lint/Debugger
+    # page.driver.pause
   end
 end
 
