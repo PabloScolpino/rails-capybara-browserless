@@ -1,6 +1,6 @@
 # README
 
-A wannabe working example of how to run capybara tests with cuprite and browserless
+A wannabe working example of how to run capybara tests with cuprite and browserless v2
 
 Currently an example for Ferrum development
 
