@@ -34,7 +34,7 @@ Capybara.register_driver(:better_cuprite) do |app|
     app,
     {
       browser_options: remote_chrome ? { 'no-sandbox' => nil } : {},
-      inspector: true,
+      inspector: !remote_chrome,
       process_timeout: 20,
       window_size: [1200, 800],
     }.merge(remote_options)
@@ -65,13 +65,16 @@ module CupriteHelpers
     page.driver.pause
   end
 
-  def debug
+  def debug(binding = nil)
     $stdout.puts '🔎 Open Chrome inspector at http://localhost:3333/debugger?token=CHROMIUMTESTTOKEN'
-    require 'pry'
-    # rubocop:disable Lint/Debugger
-    binding.pry
-    # rubocop:enable Lint/Debugger
-    # page.driver.pause
+
+    if binding.respond_to?(:pry)
+      Pry.start(binding)
+    elsif binding.respond_to?(:irb)
+      binding.irb
+    else
+      pause
+    end
   end
 end
 
