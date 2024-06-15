@@ -19,7 +19,6 @@ x-app-common: &app-common
   volumes:
     - .:/app
     - bundler:/bundler
-    - node_modules:/app/node_modules
 
 services:
   web:
@@ -33,7 +32,6 @@ services:
 
   chrome:
     image: ghcr.io/browserless/chromium:v2.13.0
-    # image: browserless/chrome
     extra_hosts:
       - "host.docker.internal:host-gateway"
     ports:
@@ -46,15 +44,5 @@ services:
       CONNECTION_TIMEOUT: 600000
       TOKEN: CHROMIUMTESTTOKEN
 
-  # postgres:
-  #   image: postgres:16.3
-  #   environment:
-  #     POSTGRES_USER: pguser
-  #     POSTGRES_PASSWORD: pgpassword
-  #   volumes:
-  #     - pg-data:/var/lib/postgresql/data
-
 volumes:
-  pg-data:
   bundler:
-  node_modules:
