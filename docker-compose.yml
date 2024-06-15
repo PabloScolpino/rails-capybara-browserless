@@ -8,7 +8,7 @@ x-build-common: &build-common
 x-app-common: &app-common
   environment:
     CI: ${CI:-false}
-    CHROME_URL: http://chrome:3333/?token=CHROMIUMTESTTOKEN
+    CHROME_URL: ws://chrome:3333/?token=CHROMIUMTESTTOKEN
   extra_hosts:
     - "host.docker.internal:host-gateway"
   image: ghcr.io/rails-capybara-browserless/web:development
@@ -33,6 +33,7 @@ services:
 
   chrome:
     image: ghcr.io/browserless/chromium:v2.13.0
+    # image: browserless/chrome
     extra_hosts:
       - "host.docker.internal:host-gateway"
     ports:

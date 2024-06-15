@@ -67,5 +67,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara', '~> 3.40.0'
+  # gem 'cuprite', '~> 0.15', github: 'rubycdp/cuprite'
   gem 'cuprite', '~> 0.15'
+  # gem 'gem_name', github: 'username/repo',
 end

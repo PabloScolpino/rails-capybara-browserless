@@ -25,7 +25,7 @@ remote_chrome =
     false
   end
 
-remote_options = remote_chrome ? { url: REMOTE_CHROME_URL } : {}
+remote_options = remote_chrome ? { ws_url: REMOTE_CHROME_URL } : {}
 
 require 'capybara/cuprite'
 
