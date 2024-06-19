@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'system_helper'
+require 'rails_helper'
 
 describe 'HomeController', :js do
   describe '#index' do
