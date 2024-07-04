@@ -80,4 +80,5 @@ end
 
 RSpec.configure do |config|
   config.include CupriteHelpers, type: :system
+  config.include CupriteHelpers, type: :feature
 end

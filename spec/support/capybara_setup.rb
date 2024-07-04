@@ -24,7 +24,7 @@ end)
 
 if ENV['CAPYBARA_APP_HOST']
   # Connect to the target web server to run tests
-  Capybara.app_host = "http://#{ENV.fetch('CAPYBARA_APP_HOST', `hostname`.strip&.downcase || '0.0.0.0')}"
+  Capybara.app_host = "http://#{ENV.fetch('CAPYBARA_APP_HOST', `hostname`.strip&.downcase || '0.0.0.0')}:3000"
 else
   # Start a puma server and connect to it
   # Make server accessible from the outside world
