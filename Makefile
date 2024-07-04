@@ -93,7 +93,7 @@ guard: chrome ## Run guard for TDD/BDD
 	$(DC_RUN) bundle exec guard
 
 guard_system: chrome ## Run guard for TDD/BDD of system tests
-	$(eval DC_ENV=--env CAPYBARA_SERVER_SILENT=1 --CAPYBARA_APP_HOST=web)
+	$(eval DC_ENV=--CAPYBARA_APP_HOST=web)
 	$(DC_RUN) bundle exec guard
 
 pessimize: ## Run pessimize gem
